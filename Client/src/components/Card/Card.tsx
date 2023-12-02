@@ -23,14 +23,14 @@ const Card: React.FC<CardProps> = ({ id, imageSrc, price, title, city }) => {
     return (
         <Link to={`/items/${id}`} className="card-link">
             <div className="card-container">
-                <div className="image-container">
-                    <img src={imageSrc} alt="Product" className="product-image" />
+                <div className="card-container__image">
+                    <img src={imageSrc} alt="Product" className="card-container__image--size" />
                 </div>
-                <div className="info-container">
-                    <p className="price">{formatCurrency(price)}</p>
-                    <p className="text">{title}</p>
+                <div className="card-container__info">
+                    <p className="card-container__info--price">{formatCurrency(price)}</p>
+                    <p className="card-container__info--text">{title}</p>
                 </div>
-                <div><span className="city">{city}</span></div>
+                <div className="card-container__city--title"><span className="card-container__city--title">{city}</span></div>
             </div>
         </Link>
     );

@@ -14,7 +14,7 @@ export const getAllItems = async (name:string) => {
     }
 }
 
-export const getItemByIdProduct = async (id:string) => {
+export const getItemByIdProduct = async (id:string | undefined) => {
     try {
         const url = `${basicPath}/${id}`;
         const response = await fetch(url); 
@@ -22,7 +22,7 @@ export const getItemByIdProduct = async (id:string) => {
             throw new Error('Error al obtener los datos');
         }
         const itemById = await response.json();
-        console.log(itemById);
+        return itemById
     } catch (error) {
         console.error('Error');
     }

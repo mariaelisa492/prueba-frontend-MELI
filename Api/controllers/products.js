@@ -6,7 +6,7 @@ const getCategories = (filters) => {
     if (categoryFilter) {
         const categories = categoryFilter.values[0]?.path_from_root?.map(category => category.name);
         if (categories && categories.length > 0) {
-            return categories.join(" > ");
+            return categories.join("  >  ");
         }
     }
     return null;

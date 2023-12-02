@@ -4,6 +4,7 @@ import Home from './pages/Home/Home';
 import Header from './components/Header/Header';
 import CardList from './components/CardList/CardList';
 import { CardDetail } from './components/CardDetail/CardDetail';
+import NotFound from './components/NotFound/NotFound';
 
 const App = () => {
   return (
@@ -11,9 +12,10 @@ const App = () => {
       <Router>
         <Header></Header>
         <Routes>
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/items" element={<CardList />} />
-          {/* <Route path="/items/:id" element={<CardDetail />} /> */}
+          <Route path="/no-found" element={<NotFound />} />
+          <Route path="/items/:id" element={<CardDetail/>} />
         </Routes>
       </Router>
     </div>
